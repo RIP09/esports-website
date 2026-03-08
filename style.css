@@ -70,32 +70,56 @@ body::after{
 
 /* ===== NAVBAR ===== */
 .nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 8%;
   position:sticky;
   top:0;
   z-index:1000;
-
-  background:var(--glass);
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 8px 32px var(--shadow);
+  background: rgba(255,255,255,0.12);
+  border-bottom:1px solid rgba(255,255,255,0.25);
+  animation:slideDown .6s ease;
+}
+
+@keyframes slideDown{
+  from{transform:translateY(-100%); opacity:0}
+  to{transform:translateY(0); opacity:1}
+}
+
+.nav-container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 8%;
 }
 
 .logo{
+  font-weight:700;
   font-size:22px;
-  font-weight:800;
   letter-spacing:1px;
+}
+
+/* LINKS */
+.nav-links{
+  display:flex;
+  gap:24px;
+  list-style:none;
 }
 
 .nav-links a{
   color:white;
   text-decoration:none;
-  margin-left:22px;
   font-weight:500;
+  position:relative;
+  transition:.3s;
+}
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:#00ffb3;
   transition:.3s;
 }
 
@@ -103,15 +127,60 @@ body::after{
   color:#00ffb3;
 }
 
-/* ===== GENERAL SECTIONS ===== */
-.section{
-  padding:80px 8%;
+.nav-links a:hover::after{
+  width:100%;
 }
 
-.container{
-  width:100%;
-  max-width:1200px;
-  margin:auto;
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:24px;
+  height:3px;
+  background:white;
+  border-radius:3px;
+  transition:.3s;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    flex-direction:column;
+    width:240px;
+    padding:30px;
+    gap:18px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(20px);
+    border-left:1px solid rgba(255,255,255,0.2);
+    height:calc(100vh - 70px);
+    transition:.4s;
+  }
+
+  .nav-links.active{
+    right:0;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translateY(8px);
+  }
+  .hamburger.active span:nth-child(2){
+    opacity:0;
+  }
+  .hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translateY(-8px);
+  }
 }
 
 /* ===== HERO SECTION ===== */
@@ -282,3 +351,4 @@ footer{
   .nav{padding:14px 5%;}
   .section{padding:60px 5%;}
 }
+
