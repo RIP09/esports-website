@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop — NXR Esports</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="nav">
+    <div class="logo">NXR ESPORTS</div>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2 class="center">Official Jerseys</h2>
+    <div class="grid">
+        <div class="card">
+        <img src="images/jersey1.jpg">
+        <h3>Home Jersey</h3>
+        <p>₹999</p>
+        <button class="btn" onclick="addToCart('Home Jersey',999)">Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="images/jersey2.jpg">
+        <h3>Away Jersey</h3>
+        <p>₹999</p>
+        <button class="btn" onclick="addToCart('Away Jersey',999)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section panel">
+    <h2>Cart</h2>
+    <div id="cart"></div>
+  </section>
+
+  <footer>© 2026 NXR Esports</footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

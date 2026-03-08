@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="nav glass">
+  <div class="logo">ADMIN PANEL</div>
+</div>
+<section class="section">
+  <div class="panel">
+    <h2>Manage Players</h2>
+    <input id="name" placeholder="Player Name">
+    <input id="role" placeholder="Role">
+    <input id="img" placeholder="Image URL">
+    <textarea id="bio" placeholder="Bio"></textarea>
+    <button class="btn" onclick="addPlayer()">Add Player</button>
+  </div>
+  <div class="panel">
+    <h2>Manage Results</h2>
+    <input id="match" placeholder="Match Name">
+    <input id="result" placeholder="Result">
+    <button class="btn" onclick="addResult()">Add Result</button>
+  </div>
+</section>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
