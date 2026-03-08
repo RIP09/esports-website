@@ -15,11 +15,7 @@
 }
 
 /* ===== LOGO SIZE FIX (RESPONSIVE) ===== */
-.logo img{
-  max-height: 48px;    /* Default logo height */
-  width: auto;         /* Maintain correct aspect ratio */
-  display: block;
-}
+.logo img { max-height: 40px; }
 
 /* Tablet */
 @media (max-width: 1024px) {
@@ -382,6 +378,7 @@ footer{
   .nav{padding:14px 5%;}
   .section{padding:60px 5%;}
 }
+
 
 
 
