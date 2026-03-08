@@ -22,14 +22,6 @@ body{
   animation: gradientBG 12s ease infinite;
 }
 
-@keyframes gradientBG{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-
-
 *{box-sizing:border-box;margin:0;padding:0}
 body::before,
 body::after{
@@ -129,8 +121,11 @@ th,td{
 
 .ticker-wrap{overflow:hidden;background:var(--glass);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0}
 .ticker{white-space:nowrap;animation:ticker 18s linear infinite;color:var(--muted);font-weight:600}
-@keyframes ticker{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
-
+@keyframes gradientBG{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
 footer{
   margin-top:60px;
   padding:30px;
@@ -143,3 +138,4 @@ footer{
 .round{display:flex;flex-direction:column;gap:20px}
 .match{padding:12px 18px;border-radius:12px;background:var(--glass);border:1px solid var(--border)}
 .champion{font-weight:800}
+
