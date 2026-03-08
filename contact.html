@@ -13,13 +13,22 @@
   </div>
 
   <section class="section panel">
-    <h2>Contact Us</h2>
-    <form class="form">
-        <input type="text" placeholder="Your Name">
-      <input type="email" placeholder="Your Email">
-      <textarea placeholder="Message"></textarea>
-      <button class="btn">Send Message</button>
-    </form>
+    <form action="https://formspree.io/f/mlgpdvzv" method="POST" class="panel">
+
+  <h2>Contact Us</h2>
+
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email Address</label>
+  <input type="email" name="email" required>
+
+  <label>Message</label>
+  <textarea name="message" rows="5" required></textarea>
+
+  <button type="submit" class="btn">Send Message</button>
+
+</form>
   </section>
 
   <footer>© 2026 NXR Esports</footer>
@@ -31,4 +40,5 @@ fetch('navbar.html')
 </body>
 
 </html>
+
 
