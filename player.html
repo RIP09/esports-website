@@ -10,6 +10,7 @@
 <div class="nav glass">
   <div class="logo">NXR ESPORTS</div>
   <div class="nav-links"><a href="team.html">Back to Team</a></div>
+  <div id="navbar"></div>
 </div>
 <section class="section">
   <div class="panel player-profile">
@@ -20,6 +21,12 @@
   </div>
 </section>
 <script src="js/script.js"></script>
+  <script>
+fetch('navbar.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('navbar').innerHTML = data);
+</script>
 </body>
 
 </html>
+
