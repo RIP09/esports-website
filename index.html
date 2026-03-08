@@ -12,6 +12,7 @@
 <body>
 
   <!-- ===== NAVBAR ===== -->
+  <div id="navbar"></div>
   <nav class="nav">
     <div class="logo">NOT X RIPPERS</div>
     <div>
@@ -148,7 +149,13 @@
 
 </body>
 </html>
+<script>
+fetch('navbar.html')
+  .then(res => res.text())
+  .then(data => document.getElementById('navbar').innerHTML = data);
+</script>
 </body>
 
 </html>
+
 
