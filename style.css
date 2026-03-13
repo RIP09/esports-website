@@ -1,269 +1,225 @@
-/* GLOBAL */
+/* ===== GLOBAL ===== */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#0b0b0f;
-color:white;
+background:#e9e9eb;
+color:#222;
 overflow-x:hidden;
 }
 
-/* ANIMATED BACKGROUND */
+/* ===== RISOGRAPH GRAIN BACKGROUND ===== */
 
 body::before{
 content:"";
 position:fixed;
+top:0;
+left:0;
 width:100%;
 height:100%;
-background:linear-gradient(120deg,#5f00ff,#00e5ff,#ff00aa);
-background-size:300% 300%;
-animation:gradient 12s infinite;
-z-index:-2;
-}
-
-@keyframes gradient{
-
-0%{background-position:0%}
-
-50%{background-position:100%}
-
-100%{background-position:0%}
-
-}
-
-/* NOISE */
-
-body::after{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:url("https://grainy-gradients.vercel.app/noise.svg");
-opacity:.12;
+background:
+url("https://grainy-gradients.vercel.app/noise.svg");
+opacity:.35;
 z-index:-1;
 }
 
-/* NAVBAR */
+/* ===== NAVBAR ===== */
 
 .navbar{
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 8%;
-background:rgba(0,0,0,.5);
+padding:16px 8%;
+position:sticky;
+top:0;
+background:rgba(255,255,255,.4);
 backdrop-filter:blur(12px);
-
+border-bottom:1px solid rgba(0,0,0,.08);
 }
 
 .logo img{
-
-height:40px;
-
+height:38px;
 }
 
-/* NAV */
-
 nav ul{
-
 display:flex;
-gap:30px;
+gap:28px;
 list-style:none;
-
 }
 
 nav a{
-
-color:white;
 text-decoration:none;
+color:#111;
+font-weight:500;
 transition:.3s;
-
 }
 
 nav a:hover{
+opacity:.6;
+}
 
-color:#00e5ff;
+/* ===== GLASS PANELS ===== */
+
+section{
+margin:60px auto;
+width:90%;
+max-width:1200px;
+padding:60px 40px;
+
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(18px);
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.4);
+box-shadow:
+0 8px 30px rgba(0,0,0,.12);
 
 }
 
-/* HERO */
+/* ===== HERO ===== */
 
 .hero{
-
-height:90vh;
-display:flex;
-align-items:center;
-justify-content:center;
 text-align:center;
-
 }
 
 .hero-logo{
-
-width:140px;
+width:120px;
 margin-bottom:20px;
-
 }
 
 .hero h1{
-
-font-size:4rem;
-letter-spacing:4px;
-
+font-size:3.2rem;
+letter-spacing:3px;
+margin-bottom:10px;
 }
 
-/* BUTTON */
+.hero p{
+opacity:.8;
+margin-bottom:25px;
+}
+
+/* ===== BUTTONS ===== */
 
 .btn{
-
-background:linear-gradient(45deg,#ff00cc,#00e5ff);
-padding:12px 30px;
+display:inline-block;
+padding:12px 28px;
 border-radius:8px;
 text-decoration:none;
+background:#111;
 color:white;
+transition:.3s;
+}
 
+.btn:hover{
+transform:translateY(-2px);
 }
 
 .btn-outline{
-
-border:2px solid white;
-padding:12px 30px;
+border:2px solid #111;
+padding:12px 28px;
 border-radius:8px;
-color:white;
 text-decoration:none;
-
+color:#111;
 }
 
-/* STATS */
+/* ===== STATS ===== */
 
 .stats{
-
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-padding:80px 10%;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
 gap:20px;
-
+text-align:center;
 }
 
 .stat{
-
-background:rgba(255,255,255,.05);
-padding:30px;
-text-align:center;
+padding:25px;
+background:rgba(255,255,255,.5);
 border-radius:12px;
-backdrop-filter:blur(10px);
-
 }
 
-/* TEAM */
+/* ===== TEAM ===== */
 
 .team{
-
 text-align:center;
-padding:80px 10%;
-
 }
 
 .team-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:30px;
-margin-top:40px;
-
+margin-top:30px;
 }
 
 .player{
-
-background:rgba(255,255,255,.05);
 padding:20px;
-border-radius:10px;
-
+background:rgba(255,255,255,.45);
+border-radius:14px;
 }
 
 .player img{
-
 width:100%;
-
+border-radius:10px;
 }
 
-/* TOURNAMENT */
-
-.tournaments{
-
-text-align:center;
-padding:80px 10%;
-
-}
+/* ===== TOURNAMENT ===== */
 
 .tournament{
-
-background:rgba(255,255,255,.05);
-padding:30px;
+background:rgba(255,255,255,.45);
+padding:25px;
 margin:20px auto;
 max-width:400px;
-border-radius:10px;
-
+border-radius:12px;
 }
 
-/* CTA */
+/* ===== CTA ===== */
 
 .cta{
-
 text-align:center;
-padding:80px;
-
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 
 footer{
-
 text-align:center;
-padding:40px;
-opacity:.6;
-
+padding:30px;
+font-size:14px;
+opacity:.7;
 }
 
-/* MOBILE */
+/* ===== HAMBURGER ===== */
 
 .hamburger{
-
 display:none;
-font-size:24px;
+font-size:26px;
 cursor:pointer;
-
 }
+
+/* ===== MOBILE ===== */
 
 @media(max-width:768px){
 
 nav ul{
-
 position:absolute;
 top:70px;
-right:0;
-background:#111;
+right:20px;
 flex-direction:column;
+background:white;
 padding:20px;
+border-radius:10px;
 display:none;
-
 }
 
 nav ul.active{
-
 display:flex;
-
 }
 
 .hamburger{
-
 display:block;
-
 }
 
 }
