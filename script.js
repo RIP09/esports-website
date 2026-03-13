@@ -31,37 +31,43 @@ function renderCart(){
   el.innerHTML+=`<hr><h3>Total: ₹${total}</h3>`;
 }
 
-// ===== MOBILE NAV TOGGLE =====
-document.addEventListener("DOMContentLoaded", function() {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+// HAMBURGER MENU
 
-  if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navLinks.classList.toggle("active");
-    });
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navLinks.classList.remove("active");
-      });
-    });
-  }
+hamburger.addEventListener("click", () => {
+
+navLinks.classList.toggle("active");
+
 });
 
-// Scroll animation
+
+// SIMPLE SCROLL ANIMATION
+
+const sections = document.querySelectorAll("section");
 
 const observer = new IntersectionObserver(entries => {
+
 entries.forEach(entry => {
+
 if(entry.isIntersecting){
-entry.target.classList.add("show");
+
+entry.target.style.opacity = 1;
+entry.target.style.transform = "translateY(0px)";
+
 }
-});
+
 });
 
-document.querySelectorAll("section").forEach(section=>{
+});
+
+sections.forEach(section => {
+
+section.style.opacity = 0;
+section.style.transform = "translateY(40px)";
+section.style.transition = "1s";
+
 observer.observe(section);
+
 });
