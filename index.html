@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,31 +13,52 @@
 
 <body>
 
-<!-- Animated Background -->
-<div class="bg-animation"></div>
+<!-- NAVBAR -->
 
-<!-- Navbar -->
-<div id="navbar"></div>
+<header class="navbar">
 
-<!-- HERO SECTION -->
+<div class="logo">
+<img src="logo.png" alt="NXR Logo">
+</div>
+
+<nav>
+
+<ul id="navLinks">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="tournaments.html">Tournaments</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<div class="hamburger" id="hamburger">☰</div>
+
+</header>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-<img src="logo.png" class="hero-logo" alt="NXR Logo">
+<img src="logo.png" class="hero-logo">
 
 <h1>NXR ESPORTS</h1>
 
-<p>
-Elite esports organisation competing in global tournaments and building the next generation of champions.
-</p>
+<p>Elite esports organisation competing in global tournaments.</p>
 
 <div class="hero-buttons">
 
-<a href="team.html" class="btn">Meet The Team</a>
+<a href="team.html" class="btn">Meet Players</a>
 
-<a href="tournaments.html" class="btn-outline">Tournaments</a>
+<a href="tournaments.html" class="btn-outline">View Tournaments</a>
 
 </div>
 
@@ -46,89 +66,84 @@ Elite esports organisation competing in global tournaments and building the next
 
 </section>
 
-<!-- STATS SECTION -->
+
+<!-- STATS -->
 
 <section class="stats">
 
-<div class="stat-card">
-<h2>120+</h2>
-<p>Matches Played</p>
-</div>
-
-<div class="stat-card">
-<h2>15+</h2>
-<p>Tournaments</p>
-</div>
-
-<div class="stat-card">
-<h2>8</h2>
-<p>Pro Players</p>
-</div>
-
-<div class="stat-card">
+<div class="stat">
 <h2>25K+</h2>
 <p>Fans</p>
 </div>
 
-</section>
+<div class="stat">
+<h2>120+</h2>
+<p>Matches</p>
+</div>
 
-<!-- ABOUT PREVIEW -->
+<div class="stat">
+<h2>15+</h2>
+<p>Tournaments</p>
+</div>
 
-<section class="about-preview">
-
-<div class="glass-card">
-
-<h2>About NXR</h2>
-
-<p>
-Not X Rippers (NXR) is a competitive esports organisation focused on building professional teams, dominating tournaments and growing a powerful gaming community.
-</p>
-
-<a href="about.html" class="btn">Learn More</a>
-
+<div class="stat">
+<h2>8</h2>
+<p>Players</p>
 </div>
 
 </section>
 
+
 <!-- TEAM PREVIEW -->
 
-<section class="team-preview">
+<section class="team">
 
 <h2>Our Players</h2>
 
 <div class="team-grid">
 
 <div class="player">
-<img src="images/player1.png">
-<h3>Player One</h3>
+
+<img src="logo.png">
+
+<h3>Shadow</h3>
+
 <p>IGL</p>
+
 </div>
 
 <div class="player">
-<img src="images/player2.png">
-<h3>Player Two</h3>
+
+<img src="logo.png">
+
+<h3>Blaze</h3>
+
 <p>Sniper</p>
+
 </div>
 
 <div class="player">
-<img src="images/player3.png">
-<h3>Player Three</h3>
+
+<img src="logo.png">
+
+<h3>Vortex</h3>
+
 <p>Support</p>
-</div>
 
 </div>
 
-<a href="team.html" class="btn">View Full Team</a>
+</div>
 
 </section>
 
-<!-- TOURNAMENT SECTION -->
+
+<!-- TOURNAMENT -->
 
 <section class="tournaments">
 
-<h2>Upcoming Tournaments</h2>
+<h2>Upcoming Events</h2>
 
-<div class="tournament-card">
+<div class="tournament">
 
 <h3>NXR Championship</h3>
 
@@ -136,9 +151,9 @@ Not X Rippers (NXR) is a competitive esports organisation focused on building pr
 
 </div>
 
-<div class="tournament-card">
+<div class="tournament">
 
-<h3>India Open Esports</h3>
+<h3>India Open</h3>
 
 <p>August 2026</p>
 
@@ -146,57 +161,17 @@ Not X Rippers (NXR) is a competitive esports organisation focused on building pr
 
 </section>
 
-<!-- SHOP SECTION -->
-
-<section class="shop-preview">
-
-<h2>Official Merchandise</h2>
-
-<div class="shop-grid">
-
-<div class="product">
-
-<img src="images/jersey.png">
-
-<h3>NXR Jersey</h3>
-
-<p>$29</p>
-
-</div>
-
-<div class="product">
-
-<img src="images/hoodie.png">
-
-<h3>NXR Hoodie</h3>
-
-<p>$45</p>
-
-</div>
-
-</div>
-
-<a href="shop.html" class="btn">Visit Shop</a>
-
-</section>
 
 <!-- CTA -->
 
 <section class="cta">
 
-<div class="glass-card">
-
 <h2>Join Our Community</h2>
-
-<p>Become a part of NXR Esports.</p>
 
 <a href="contact.html" class="btn">Contact Us</a>
 
-</div>
-
 </section>
 
-<!-- FOOTER -->
 
 <footer>
 
@@ -204,18 +179,9 @@ Not X Rippers (NXR) is a competitive esports organisation focused on building pr
 
 </footer>
 
-<!-- JS -->
 
-<script src="js/script.js"></script>
-
-<script>
-fetch('components/navbar.html')
-.then(res => res.text())
-.then(data => document.getElementById('navbar').innerHTML = data);
-</script>
+<script src="script.js"></script>
 
 </body>
 
 </html>
-
-
