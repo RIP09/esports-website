@@ -1,12 +1,10 @@
-/* ===============================
-GLOBAL SETTINGS
-=============================== */
+/* GLOBAL */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: 'Segoe UI', sans-serif;
+font-family:Arial;
 }
 
 body{
@@ -15,316 +13,257 @@ color:white;
 overflow-x:hidden;
 }
 
-/* ===============================
-NOISE / RISOGRAPH TEXTURE
-=============================== */
+/* ANIMATED BACKGROUND */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,#5f00ff,#00e5ff,#ff00aa);
+background-size:300% 300%;
+animation:gradient 12s infinite;
+z-index:-2;
+}
+
+@keyframes gradient{
+
+0%{background-position:0%}
+
+50%{background-position:100%}
+
+100%{background-position:0%}
+
+}
+
+/* NOISE */
 
 body::after{
 content:"";
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
 background:url("https://grainy-gradients.vercel.app/noise.svg");
 opacity:.12;
-pointer-events:none;
-z-index:1;
+z-index:-1;
 }
 
-/* ===============================
-ANIMATED BACKGROUND
-=============================== */
-
-.bg-animation{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:linear-gradient(120deg,#4f00ff,#00e5ff,#ff00aa);
-background-size:300% 300%;
-animation:gradientMove 15s infinite;
-z-index:-2;
-}
-
-@keyframes gradientMove{
-0%{background-position:0%}
-50%{background-position:100%}
-100%{background-position:0%}
-}
-
-/* ===============================
-NAVBAR
-=============================== */
+/* NAVBAR */
 
 .navbar{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 8%;
-background:rgba(0,0,0,.4);
+background:rgba(0,0,0,.5);
 backdrop-filter:blur(12px);
-position:sticky;
-top:0;
-z-index:1000;
+
 }
 
 .logo img{
-max-height:50px;
-width:auto;
+
+height:40px;
+
 }
 
-/* NAV LINKS */
+/* NAV */
 
-.nav-links{
+nav ul{
+
 display:flex;
-list-style:none;
 gap:30px;
+list-style:none;
+
 }
 
-.nav-links a{
-text-decoration:none;
+nav a{
+
 color:white;
-font-weight:500;
+text-decoration:none;
 transition:.3s;
+
 }
 
-.nav-links a:hover{
+nav a:hover{
+
 color:#00e5ff;
-}
-
-/* ===============================
-HAMBURGER
-=============================== */
-
-.hamburger{
-display:none;
-font-size:26px;
-cursor:pointer;
-}
-
-/* MOBILE MENU */
-
-@media(max-width:768px){
-
-.nav-links{
-position:absolute;
-top:70px;
-right:0;
-background:#111;
-flex-direction:column;
-width:200px;
-padding:20px;
-display:none;
-}
-
-.nav-links.active{
-display:flex;
-}
-
-.hamburger{
-display:block;
-}
 
 }
 
-/* ===============================
-HERO SECTION
-=============================== */
+/* HERO */
 
 .hero{
+
 height:90vh;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:0 20px;
+
 }
 
 .hero-logo{
-width:160px;
+
+width:140px;
 margin-bottom:20px;
+
 }
 
 .hero h1{
+
 font-size:4rem;
 letter-spacing:4px;
-margin-bottom:10px;
+
 }
 
-.hero p{
-opacity:.8;
-margin-bottom:20px;
-}
-
-/* ===============================
-BUTTONS
-=============================== */
+/* BUTTON */
 
 .btn{
-display:inline-block;
+
+background:linear-gradient(45deg,#ff00cc,#00e5ff);
 padding:12px 30px;
 border-radius:8px;
-background:linear-gradient(45deg,#ff00cc,#00e5ff);
-color:white;
 text-decoration:none;
-transition:.3s;
-}
+color:white;
 
-.btn:hover{
-transform:scale(1.05);
 }
 
 .btn-outline{
+
 border:2px solid white;
 padding:12px 30px;
 border-radius:8px;
-text-decoration:none;
 color:white;
+text-decoration:none;
+
 }
 
-/* ===============================
-GLASS CARD
-=============================== */
-
-.glass-card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
-border-radius:16px;
-padding:40px;
-text-align:center;
-box-shadow:0 10px 40px rgba(0,0,0,.4);
-}
-
-/* ===============================
-STATS SECTION
-=============================== */
+/* STATS */
 
 .stats{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+padding:80px 10%;
 gap:20px;
-padding:80px 10%;
+
 }
 
-.stat-card{
+.stat{
+
 background:rgba(255,255,255,.05);
-backdrop-filter:blur(10px);
 padding:30px;
-border-radius:12px;
 text-align:center;
-transition:.3s;
+border-radius:12px;
+backdrop-filter:blur(10px);
+
 }
 
-.stat-card:hover{
-transform:translateY(-5px);
-}
+/* TEAM */
 
-/* ===============================
-TEAM SECTION
-=============================== */
+.team{
 
-.team-preview{
 text-align:center;
 padding:80px 10%;
+
 }
 
 .team-grid{
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:30px;
 margin-top:40px;
+
 }
 
 .player{
+
 background:rgba(255,255,255,.05);
 padding:20px;
-border-radius:12px;
-backdrop-filter:blur(10px);
+border-radius:10px;
+
 }
 
 .player img{
+
 width:100%;
-border-radius:10px;
+
 }
 
-/* ===============================
-TOURNAMENT SECTION
-=============================== */
+/* TOURNAMENT */
 
 .tournaments{
+
 text-align:center;
 padding:80px 10%;
+
 }
 
-.tournament-card{
+.tournament{
+
 background:rgba(255,255,255,.05);
 padding:30px;
-border-radius:12px;
 margin:20px auto;
 max-width:400px;
-}
-
-/* ===============================
-SHOP SECTION
-=============================== */
-
-.shop-preview{
-text-align:center;
-padding:80px 10%;
-}
-
-.shop-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.product{
-background:rgba(255,255,255,.05);
-padding:20px;
-border-radius:12px;
-}
-
-.product img{
-width:100%;
 border-radius:10px;
+
 }
 
-/* ===============================
-CTA SECTION
-=============================== */
+/* CTA */
 
 .cta{
-padding:80px 10%;
-display:flex;
-justify-content:center;
+
+text-align:center;
+padding:80px;
+
 }
 
-/* ===============================
-FOOTER
-=============================== */
+/* FOOTER */
 
 footer{
+
 text-align:center;
 padding:40px;
 opacity:.6;
+
 }
 
-/* ===============================
-RESPONSIVE
-=============================== */
+/* MOBILE */
+
+.hamburger{
+
+display:none;
+font-size:24px;
+cursor:pointer;
+
+}
 
 @media(max-width:768px){
 
-.hero h1{
-font-size:2.5rem;
+nav ul{
+
+position:absolute;
+top:70px;
+right:0;
+background:#111;
+flex-direction:column;
+padding:20px;
+display:none;
+
 }
 
-.hero-logo{
-width:120px;
+nav ul.active{
+
+display:flex;
+
+}
+
+.hamburger{
+
+display:block;
+
 }
 
 }
