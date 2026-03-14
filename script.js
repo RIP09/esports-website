@@ -38,13 +38,27 @@ const overlay = document.getElementById("overlay");
 hamburger.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
   overlay.classList.toggle("active");
-  hamburger.classList.toggle("toggle"); // Animate hamburger to X
+  hamburger.classList.toggle("toggle");
 });
 
 overlay.addEventListener("click", () => {
   mobileMenu.classList.remove("active");
   overlay.classList.remove("active");
   hamburger.classList.remove("toggle");
+});
+
+/* CLOSE MENU WHEN LINK CLICKED */
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburger.classList.remove("toggle");
+
+  });
+
 });
 
 
