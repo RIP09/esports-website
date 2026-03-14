@@ -76,3 +76,20 @@ card.style.transition="0.6s";
 observer.observe(card);
 
 });
+
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+link.addEventListener("touchstart", function() {
+
+this.classList.add("touch-active");
+
+});
+
+link.addEventListener("touchend", function() {
+
+this.classList.remove("touch-active");
+
+});
+
+});
