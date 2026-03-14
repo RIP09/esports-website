@@ -300,14 +300,12 @@ transition:all .25s ease;
 .mobile-menu a:hover{
 background:rgba(58,134,255,.15);
 color:#3a86ff;
-transform:translateX(4px);
 }
 
 /* touch feedback for mobile */
 
 .mobile-menu a:active{
 background:rgba(58,134,255,.25);
-transform:scale(.97);
 }
 
 .touch-active{
