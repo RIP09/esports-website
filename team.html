@@ -1,45 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Team — NXR Esports</title>
-  <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>NxR Esports - Team</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <div class="nav">
-    <div class="logo">NXR ESPORTS</div>
-    <div id="navbar"></div>
-  </div>
 
-  <section class="section">
-    <h2 class="center">Team Roster</h2>
-    <div class="grid">
-        <div class="card">
-        <img src="images/player1.jpg">
-        <h3>Shadow</h3>
-        <p>IGL • Assault</p>
-      </div>
-      <div class="card">
-        <img src="images/player2.jpg">
-        <h3>Blaze</h3>
-        <p>Entry • Rusher</p>
-      </div>
-      <div class="card">
-        <img src="images/player3.jpg">
-        <h3>Viper</h3>
-        <p>Sniper • Support</p>
-      </div>
-    </div>
-  </section>
+<div class="overlay"></div>
 
-  <footer>© 2026 NXR Esports</footer>
-  <script>
-fetch('navbar.html')
-  .then(res => res.text())
-  .then(data => document.getElementById('navbar').innerHTML = data);
-</script>
+<header class="navbar">
+
+<div class="logo">
+<img src="logo.png">
+<span>NxR Esports</span>
+</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="matches.html">Matches</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="shop.html">Shop</a></li>
+<li><a href="sponsors.html">Sponsors</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</header>
+
+<div class="mobile-menu">
+
+<a href="index.html">Home</a>
+<a href="team.html">Team</a>
+<a href="matches.html">Matches</a>
+<a href="news.html">News</a>
+<a href="shop.html">Shop</a>
+<a href="sponsors.html">Sponsors</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<section class="glass">
+
+<h1>Our Roster</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Shadow</h3>
+<p>In-Game Leader</p>
+</div>
+
+<div class="card">
+<h3>Blaze</h3>
+<p>Sniper</p>
+</div>
+
+<div class="card">
+<h3>Vortex</h3>
+<p>Support</p>
+</div>
+
+<div class="card">
+<h3>Phantom</h3>
+<p>Entry Fragger</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 NxR Esports</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
-
-
