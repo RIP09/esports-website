@@ -38,7 +38,7 @@ const overlay = document.getElementById("overlay");
 hamburger.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
   overlay.classList.toggle("active");
-  hamburger.classList.toggle("toggle"); // animate X
+  hamburger.classList.toggle("toggle"); // Animate hamburger to X
 });
 
 overlay.addEventListener("click", () => {
@@ -46,16 +46,7 @@ overlay.addEventListener("click", () => {
   overlay.classList.remove("active");
   hamburger.classList.remove("toggle");
 });
-});
 
-/* CLOSE MENU */
-
-overlay.addEventListener("click", () => {
-
-mobileMenu.classList.remove("active");
-overlay.classList.remove("active");
-
-});
 
 /* SCROLL ANIMATION */
 
