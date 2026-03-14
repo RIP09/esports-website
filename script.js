@@ -31,15 +31,21 @@ function renderCart(){
   el.innerHTML+=`<hr><h3>Total: ₹${total}</h3>`;
 }
 
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".mobile-menu");
-const overlay = document.querySelector(".overlay");
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
 
 hamburger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+  overlay.classList.toggle("active");
+  hamburger.classList.toggle("toggle"); // animate X
+});
 
-mobileMenu.classList.toggle("active");
-overlay.classList.toggle("active");
-
+overlay.addEventListener("click", () => {
+  mobileMenu.classList.remove("active");
+  overlay.classList.remove("active");
+  hamburger.classList.remove("toggle");
+});
 });
 
 /* CLOSE MENU */
