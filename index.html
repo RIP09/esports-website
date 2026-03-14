@@ -1,93 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>NxR Esports</title>
-<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0a0a0f;
+color:white;
+overflow-x:hidden;
+}
+
+/* GRADIENT + GRAIN */
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,#ff006e,#8338ec,#3a86ff,#06ffa5);
+opacity:.35;
+z-index:-2;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:url("https://grainy-gradients.vercel.app/noise.svg");
+opacity:.25;
+z-index:-1;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 8%;
+background:rgba(15,15,20,.6);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(255,255,255,.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo img{
+height:36px;
+}
+
+.logo span{
+font-family:'Russo One';
+letter-spacing:2px;
+font-size:20px;
+}
+
+/* DESKTOP NAV */
+
+.nav-links{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:#3a86ff;
+}
+
+/* HAMBURGER */
+
+.hamburger{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:6px;
+z-index:3000;
+}
+
+.hamburger span{
+width:26px;
+height:3px;
+background:white;
+transition:.3s;
+}
+
+/* HAMBURGER ANIMATION */
+
+.hamburger.toggle span:nth-child(1){
+transform:rotate(45deg) translate(5px,5px);
+}
+
+.hamburger.toggle span:nth-child(2){
+opacity:0;
+}
+
+.hamburger.toggle span:nth-child(3){
+transform:rotate(-45deg) translate(5px,-5px);
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:260px;
+height:100%;
+background:#111;
+padding:90px 30px;
+transition:.4s;
+z-index:2000;
+}
+
+.mobile-menu a{
+display:block;
+margin:22px 0;
+font-weight:700;
+text-decoration:none;
+color:white;
+}
+
+.mobile-menu.active{
+right:0;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:fixed;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(6px);
+opacity:0;
+pointer-events:none;
+transition:.3s;
+z-index:1500;
+}
+
+.overlay.active{
+opacity:1;
+pointer-events:auto;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:140px 20px;
+}
+
+.hero h1{
+font-family:'Russo One';
+font-size:4rem;
+letter-spacing:4px;
+}
+
+.hero p{
+margin-top:20px;
+opacity:.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 32px;
+background:#3a86ff;
+border-radius:10px;
+font-weight:700;
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+.btn:hover{
+box-shadow:0 0 20px #3a86ff;
+transform:translateY(-4px);
+}
+
+/* GRID */
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(25px);
+border-radius:20px;
+border:1px solid rgba(255,255,255,.15);
+padding:60px;
+margin:80px auto;
+width:90%;
+max-width:1200px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:14px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(58,134,255,.5);
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.6;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+}
+
+.hamburger{
+display:flex;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="overlay" id="overlay"></div>
+
 <header class="navbar">
 
-  <div class="logo">
-    <img src="logo.png" alt="NxR Esports Logo">
-    <span>NxR Esports</span>
-  </div>
+<div class="logo">
+<img src="logo.png">
+<span>NxR Esports</span>
+</div>
 
-  <!-- Desktop Navigation -->
-  <nav>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="matches.html">Matches</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="shop.html">Shop</a></li>
-      <li><a href="sponsors.html">Sponsors</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Team</a></li>
+<li><a href="#">Matches</a></li>
+<li><a href="#">News</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="#">Sponsors</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
 
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="team.html">Team</a>
-    <a href="matches.html">Matches</a>
-    <a href="news.html">News</a>
-    <a href="shop.html">Shop</a>
-    <a href="sponsors.html">Sponsors</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Overlay for mobile menu -->
-  <div class="overlay" id="overlay"></div>
+<div class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
 </header>
 
-<!-- HERO SECTION -->
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="#">Home</a>
+<a href="#">Team</a>
+<a href="#">Matches</a>
+<a href="#">News</a>
+<a href="#">Shop</a>
+<a href="#">Sponsors</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+
+</div>
+
 <section class="hero">
-  <h1>NxR Esports</h1>
-  <p>Elite competitive esports organization.</p>
-  <a class="btn" href="team.html">Meet the Team</a>
+
+<h1>NxR Esports</h1>
+
+<p>Elite competitive esports organization.</p>
+
+<a class="btn" href="#">Meet the Team</a>
+
 </section>
 
-<!-- FEATURED PLAYERS -->
 <section class="glass">
-  <h2>Featured Players</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Shadow</h3>
-      <p>IGL</p>
-    </div>
-    <div class="card">
-      <h3>Blaze</h3>
-      <p>Sniper</p>
-    </div>
-    <div class="card">
-      <h3>Vortex</h3>
-      <p>Support</p>
-    </div>
-  </div>
+
+<h2>Featured Players</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Shadow</h3>
+<p>IGL</p>
+</div>
+
+<div class="card">
+<h3>Blaze</h3>
+<p>Sniper</p>
+</div>
+
+<div class="card">
+<h3>Vortex</h3>
+<p>Support</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 NxR Esports</p>
+<p>© 2026 NxR Esports</p>
 </footer>
 
-<!-- SCRIPT -->
-<script src="script.js"></script>
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+hamburger.addEventListener("click", () => {
+
+mobileMenu.classList.toggle("active");
+overlay.classList.toggle("active");
+hamburger.classList.toggle("toggle");
+
+});
+
+overlay.addEventListener("click", () => {
+
+mobileMenu.classList.remove("active");
+overlay.classList.remove("active");
+hamburger.classList.remove("toggle");
+
+});
+
+</script>
 
 </body>
 </html>
