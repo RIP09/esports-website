@@ -11,9 +11,9 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
 
 const matches=[
-  'NXR vs Team Alpha — LIVE',
-  'NXR vs NightRaiders — 7:30 PM',
-  'NXR vs ShadowClan — Tomorrow'
+  'NxR vs Team Alpha — LIVE',
+  'NxR vs NightRaiders — 7:30 PM',
+  'NxR vs ShadowClan — Tomorrow'
 ];
 const ticker=document.getElementById('ticker');
 if(ticker) ticker.innerHTML = matches.join(' ✦ ');
@@ -31,21 +31,29 @@ function renderCart(){
   el.innerHTML+=`<hr><h3>Total: ₹${total}</h3>`;
 }
 
-// HAMBURGER MENU
-
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".overlay");
 
 hamburger.addEventListener("click", () => {
 
-navLinks.classList.toggle("active");
+mobileMenu.classList.toggle("active");
+overlay.classList.toggle("active");
 
 });
 
+/* CLOSE MENU */
 
-// SIMPLE SCROLL ANIMATION
+overlay.addEventListener("click", () => {
 
-const sections = document.querySelectorAll("section");
+mobileMenu.classList.remove("active");
+overlay.classList.remove("active");
+
+});
+
+/* SCROLL ANIMATION */
+
+const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
 
@@ -53,8 +61,8 @@ entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-entry.target.style.opacity = 1;
-entry.target.style.transform = "translateY(0px)";
+entry.target.style.opacity=1;
+entry.target.style.transform="translateY(0)";
 
 }
 
@@ -62,12 +70,12 @@ entry.target.style.transform = "translateY(0px)";
 
 });
 
-sections.forEach(section => {
+cards.forEach(card => {
 
-section.style.opacity = 0;
-section.style.transform = "translateY(40px)";
-section.style.transition = "1s";
+card.style.opacity=0;
+card.style.transform="translateY(40px)";
+card.style.transition="0.6s";
 
-observer.observe(section);
+observer.observe(card);
 
 });
