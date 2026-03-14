@@ -309,3 +309,8 @@ transform:translateX(4px);
 background:rgba(58,134,255,.25);
 transform:scale(.97);
 }
+
+.touch-active{
+background:rgba(58,134,255,.25);
+transform:scale(.97);
+}
