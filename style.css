@@ -136,8 +136,10 @@ width:260px;
 height:100%;
 background:#111;
 padding:90px 30px;
-transition:.4s;
-z-index:3000;   /* higher than overlay */
+
+transition: right .45s cubic-bezier(.77,0,.18,1);
+
+z-index:3000;
 }
 
 .mobile-menu a{
