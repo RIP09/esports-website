@@ -1,111 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>NxR Esports</title>
-
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-<div class="overlay"></div>
-
 <header class="navbar">
 
-<div class="logo">
-<img src="logo.png">
-<span>NxR Esports</span>
-</div>
+  <div class="logo">
+    <img src="logo.png" alt="NxR Esports Logo">
+    <span>NxR Esports</span>
+  </div>
 
-<nav>
+  <!-- Desktop Navigation -->
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="matches.html">Matches</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="sponsors.html">Sponsors</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<ul>
+  <!-- Hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="team.html">Team</a></li>
-<li><a href="matches.html">Matches</a></li>
-<li><a href="news.html">News</a></li>
-<li><a href="shop.html">Shop</a></li>
-<li><a href="sponsors.html">Sponsors</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html">Contact</a></li>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="team.html">Team</a>
+    <a href="matches.html">Matches</a>
+    <a href="news.html">News</a>
+    <a href="shop.html">Shop</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-</ul>
-
-</nav>
-
-<div class="hamburger">
-
-<span></span>
-<span></span>
-<span></span>
-
-</div>
+  <!-- Overlay for mobile menu -->
+  <div class="overlay" id="overlay"></div>
 
 </header>
 
-<div class="mobile-menu">
-
-<a href="index.html">Home</a>
-<a href="team.html">Team</a>
-<a href="matches.html">Matches</a>
-<a href="news.html">News</a>
-<a href="shop.html">Shop</a>
-<a href="sponsors.html">Sponsors</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-
-</div>
-
+<!-- HERO SECTION -->
 <section class="hero">
-
-<h1>NxR Esports</h1>
-
-<p>Elite competitive esports organization.</p>
-
-<a class="btn" href="team.html">Meet the Team</a>
-
+  <h1>NxR Esports</h1>
+  <p>Elite competitive esports organization.</p>
+  <a class="btn" href="team.html">Meet the Team</a>
 </section>
 
+<!-- FEATURED PLAYERS -->
 <section class="glass">
-
-<h2>Featured Players</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Shadow</h3>
-<p>IGL</p>
-</div>
-
-<div class="card">
-<h3>Blaze</h3>
-<p>Sniper</p>
-</div>
-
-<div class="card">
-<h3>Vortex</h3>
-<p>Support</p>
-</div>
-
-</div>
-
+  <h2>Featured Players</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Shadow</h3>
+      <p>IGL</p>
+    </div>
+    <div class="card">
+      <h3>Blaze</h3>
+      <p>Sniper</p>
+    </div>
+    <div class="card">
+      <h3>Vortex</h3>
+      <p>Support</p>
+    </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-
-<p>© 2026 NxR Esports</p>
-
+  <p>© 2026 NxR Esports</p>
 </footer>
 
+<!-- SCRIPT -->
 <script src="script.js"></script>
 
 </body>
-
 </html>
