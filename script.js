@@ -1,57 +1,85 @@
+// ============================
+// NxR ESPORTS MAIN SCRIPT
+// ============================
+
+// Firebase
 const firebaseConfig = {
-    apiKey: "AIzaSyCfFftuGwAibm6kBLFGazE1TDAtrq_OqGA",
-    authDomain: "nxr-esports-707c7.firebaseapp.com",
-    projectId: "nxr-esports-707c7",
-    storageBucket: "nxr-esports-707c7.firebasestorage.app",
-    messagingSenderId: "727264849443",
-    appId: "1:727264849443:web:489eff2f85f8e4865d4b96"
-  };
+  apiKey: "AIzaSyCfFftuGwAibm6kBLFGazE1TDAtrq_OqGA",
+  authDomain: "nxr-esports-707c7.firebaseapp.com",
+  projectId: "nxr-esports-707c7",
+  storageBucket: "nxr-esports-707c7.firebasestorage.app",
+  messagingSenderId: "727264849443",
+  appId: "1:727264849443:web:489eff2f85f8e4865d4b96"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+if (typeof initializeApp !== "undefined") {
+  initializeApp(firebaseConfig);
+}
 
-const matches=[
-  'NxR vs Team Alpha — LIVE',
-  'NxR vs NightRaiders — 7:30 PM',
-  'NxR vs ShadowClan — Tomorrow'
+// ============================
+// MATCH TICKER
+// ============================
+
+const matches = [
+  "NxR vs Team Alpha — LIVE",
+  "NxR vs NightRaiders — 7:30 PM",
+  "NxR vs ShadowClan — Tomorrow"
 ];
-const ticker=document.getElementById('ticker');
-if(ticker) ticker.innerHTML = matches.join(' ✦ ');
 
-let cart=[];
-function addToCart(name,price){
-  cart.push({name,price});
+const ticker = document.getElementById("ticker");
+
+if (ticker) {
+  ticker.innerHTML = matches.join(" ✦ ");
+}
+
+// ============================
+// SHOP CART
+// ============================
+
+let cart = [];
+
+function addToCart(name, price) {
+  cart.push({ name, price });
   renderCart();
 }
-function renderCart(){
-  const el=document.getElementById('cart');
-  if(!el) return;
-  let total=0; el.innerHTML='';
-  cart.forEach(i=>{ total+=i.price; el.innerHTML+=`<p>${i.name} — ₹${i.price}</p>` });
-  el.innerHTML+=`<hr><h3>Total: ₹${total}</h3>`;
+
+function renderCart() {
+  const el = document.getElementById("cart");
+
+  if (!el) return;
+
+  let total = 0;
+  el.innerHTML = "";
+
+  cart.forEach(item => {
+    total += item.price;
+    el.innerHTML += `<p>${item.name} — ₹${item.price}</p>`;
+  });
+
+  el.innerHTML += `<hr><h3>Total: ₹${total}</h3>`;
 }
 
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-const overlay = document.getElementById("overlay");
+// ============================
+// MOBILE MENU
+// ============================
 
-hamburger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-  overlay.classList.toggle("active");
-  hamburger.classList.toggle("toggle");
-});
+document.addEventListener("DOMContentLoaded", () => {
 
-overlay.addEventListener("click", () => {
-  mobileMenu.classList.remove("active");
-  overlay.classList.remove("active");
-  hamburger.classList.remove("toggle");
-});
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const overlay = document.querySelector(".overlay");
 
-/* CLOSE MENU WHEN LINK CLICKED */
+  if (!hamburger || !mobileMenu || !overlay) return;
 
-document.querySelectorAll(".mobile-menu a").forEach(link => {
+  hamburger.addEventListener("click", () => {
 
-  link.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+    hamburger.classList.toggle("toggle");
+
+  });
+
+  overlay.addEventListener("click", () => {
 
     mobileMenu.classList.remove("active");
     overlay.classList.remove("active");
@@ -59,51 +87,52 @@ document.querySelectorAll(".mobile-menu a").forEach(link => {
 
   });
 
+  // Close menu when clicking links
+  document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      mobileMenu.classList.remove("active");
+      overlay.classList.remove("active");
+      hamburger.classList.remove("toggle");
+
+    });
+
+  });
+
 });
 
-
-/* SCROLL ANIMATION */
+// ============================
+// SCROLL ANIMATION
+// ============================
 
 const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver(entries => {
+if (cards.length) {
 
-entries.forEach(entry => {
+  const observer = new IntersectionObserver(entries => {
 
-if(entry.isIntersecting){
+    entries.forEach(entry => {
 
-entry.target.style.opacity=1;
-entry.target.style.transform="translateY(0)";
+      if (entry.isIntersecting) {
+
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+
+      }
+
+    });
+
+  });
+
+  cards.forEach(card => {
+
+    card.style.opacity = 0;
+    card.style.transform = "translateY(40px)";
+    card.style.transition = "0.6s";
+
+    observer.observe(card);
+
+  });
 
 }
-
-});
-
-});
-
-cards.forEach(card => {
-
-card.style.opacity=0;
-card.style.transform="translateY(40px)";
-card.style.transition="0.6s";
-
-observer.observe(card);
-
-});
-
-
-document.querySelectorAll(".mobile-menu a").forEach(link => {
-
-link.addEventListener("touchstart", function() {
-
-this.classList.add("touch-active");
-
-});
-
-link.addEventListener("touchend", function() {
-
-this.classList.remove("touch-active");
-
-});
-
-});
